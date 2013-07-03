@@ -77,7 +77,7 @@ class Conversation < ActiveRecord::Base
 
 	#First message of the conversation.
 	def original_message
-		@original_message = self.messages.find(:first, :order => 'created_at') if @original_message.nil?
+		@original_message = self.messages.order('created_at').first if @original_message.nil?
 		return @original_message
 	end
 
@@ -89,7 +89,7 @@ class Conversation < ActiveRecord::Base
 
 	#Last message in the conversation.
 	def last_message
-		@last_message = self.messages.find(:first, :order => 'created_at DESC') if @last_message.nil?
+		@last_message = self.messages.order('created_at DESC').first if @last_message.nil?
 		return @last_message
 	end
 
