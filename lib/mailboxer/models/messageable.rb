@@ -58,7 +58,7 @@ module Mailboxer
 
       #Sends a messages, starting a new conversation, with the messageable
       #as originator
-      def send_message(recipients, msg_body, subject, product_id=71, sanitize_text=true, attachment=nil, message_timestamp = Time.now)
+      def send_message(recipients, msg_body, subject, product_id, sanitize_text=true, attachment=nil, message_timestamp = Time.now)
         convo = Conversation.new({:subject => subject})
         convo.created_at = message_timestamp
         convo.updated_at = message_timestamp
@@ -66,6 +66,7 @@ module Mailboxer
         message.created_at = message_timestamp
         message.updated_at = message_timestamp
         message.conversation = convo
+        message.product_id = product_id
         message.recipients = recipients.is_a?(Array) ? recipients : [recipients]
         message.recipients = message.recipients.uniq
         return message.deliver false,sanitize_text
