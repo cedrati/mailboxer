@@ -60,6 +60,7 @@ module Mailboxer
       #as originator
       def send_message(recipients, msg_body, subject, product_id, sanitize_text=true, attachment=nil, message_timestamp = Time.now)
         convo = Conversation.new({:subject => subject})
+        convo.product_id = product_id
         convo.created_at = message_timestamp
         convo.updated_at = message_timestamp
         message = messages.new({:body => msg_body, :subject => subject, :product_id => product_id, :attachment => attachment})
