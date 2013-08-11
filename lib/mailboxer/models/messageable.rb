@@ -56,21 +56,7 @@ module Mailboxer
         return Notification.notify_all([self],subject,body,obj,sanitize_text,notification_code)
       end
 
-      #Sends a messages, starting a new conversation, with the messageable
-      #as originator
-      def send_message(recipients, msg_body, subject, product_id, sanitize_text=true, attachment=nil, message_timestamp = Time.now)
-        convo = Conversation.new({:subject => product_id})
-        convo.created_at = message_timestamp
-        convo.updated_at = message_timestamp
-        message = messages.new({:body => msg_body, :subject => subject, :attachment => attachment})
-        message.created_at = message_timestamp
-        message.updated_at = message_timestamp
-        message.conversation = convo
-        message.product_id = product_id
-        message.recipients = recipients.is_a?(Array) ? recipients : [recipients]
-        message.recipients = message.recipients.uniq
-        return message.deliver false,sanitize_text
-      end
+---
 
       #Basic reply method. USE NOT RECOMENDED.
       #Use reply_to_sender, reply_to_all and reply_to_conversation instead.
