@@ -1,7 +1,7 @@
 class Message < Notification
   attr_accessible :attachment if Rails::VERSION::MAJOR == 3
 
-  belongs_to :conversation, :validate => true, :autosave => true
+  belongs_to :conversation, :validate => true, :autosave => true, touch: true
   validates_presence_of :sender
 
   class_attribute :on_deliver_callback
