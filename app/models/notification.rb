@@ -2,8 +2,8 @@ class Notification < ActiveRecord::Base
   attr_accessor :recipients
   attr_accessible :body, :subject, :global, :expires if Rails::VERSION::MAJOR == 3
 
-  belongs_to :sender, :polymorphic => :true
-  belongs_to :notified_object, :polymorphic => :true
+  belongs_to :sender, :polymorphic => :true, touch: true
+  belongs_to :notified_object, :polymorphic => :true, touch: true
   validates_presence_of :subject, :body
   has_many :receipts, :dependent => :destroy
 
