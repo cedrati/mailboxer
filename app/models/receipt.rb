@@ -1,7 +1,7 @@
 class Receipt < ActiveRecord::Base
-  belongs_to :notification, :validate => true, :autosave => true
-  belongs_to :receiver, :polymorphic => :true
-  belongs_to :message, :foreign_key => "notification_id"
+  belongs_to :notification, :validate => true, :autosave => true, touch: true
+  belongs_to :receiver, :polymorphic => :true, touch: true
+  belongs_to :message, :foreign_key => "notification_id", touch: true
 
   validates_presence_of :receiver
   attr_accessible :trashed, :is_read if Rails::VERSION::MAJOR == 3
