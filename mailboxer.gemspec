@@ -15,28 +15,28 @@ Gem::Specification.new do |s|
   # Gem dependencies
   #
   # SQL foreign keys
-  s.add_runtime_dependency('foreigner', '>= 0.9.1')
+  s.add_runtime_dependency('foreigner')
 
   # Development Gem dependencies
-  s.add_runtime_dependency('rails', '> 3.0.0')
-  s.add_runtime_dependency('carrierwave', '>= 0.5.8')
+  s.add_runtime_dependency('rails')
+  #s.add_runtime_dependency('carrierwave')
   # Debugging
   if RUBY_VERSION < '1.9'
-    s.add_development_dependency('ruby-debug', '>= 0.10.3')
+    s.add_development_dependency('ruby-debug')
   end
   # Specs
-  s.add_development_dependency('rspec-rails', '>= 2.6.1')
+  s.add_development_dependency('rspec-rails')
   # Fixtures
   #if RUBY_VERSION >= '1.9.2'
    # s.add_development_dependency('factory_girl', '>= 3.0.0')
   #else
     #s.add_development_dependency('factory_girl', '~> 2.6.0')
   #end
-  s.add_development_dependency('factory_girl', '~> 2.6.0')
+  #s.add_development_dependency('factory_girl')
   # Population
-  s.add_development_dependency('forgery', '>= 0.3.6')
+  #s.add_development_dependency('forgery')
   # Integration testing
-  s.add_development_dependency('capybara', '>= 0.3.9')
+  #s.add_development_dependency('capybara')
   # Testing database
   if RUBY_PLATFORM == 'java'
     s.add_development_dependency('jdbc-sqlite3')
