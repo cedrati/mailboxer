@@ -25,18 +25,18 @@ Gem::Specification.new do |s|
     s.add_development_dependency('ruby-debug', '>= 0.10.3')
   end
   # Specs
-  s.add_development_dependency('rspec-rails', '>= 2.6.1')
+  #s.add_development_dependency('rspec-rails', '>= 2.6.1')
   # Fixtures
   #if RUBY_VERSION >= '1.9.2'
    # s.add_development_dependency('factory_girl', '>= 3.0.0')
   #else
     #s.add_development_dependency('factory_girl', '~> 2.6.0')
   #end
-  s.add_development_dependency('factory_girl', '~> 2.6.0')
+  #s.add_development_dependency('factory_girl', '~> 2.6.0')
   # Population
-  s.add_development_dependency('forgery', '>= 0.3.6')
+  #s.add_development_dependency('forgery', '>= 0.3.6')
   # Integration testing
-  s.add_development_dependency('capybara', '>= 0.3.9')
+  #s.add_development_dependency('capybara', '>= 0.3.9')
   # Testing database
   if RUBY_PLATFORM == 'java'
     s.add_development_dependency('jdbc-sqlite3')
