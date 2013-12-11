@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = "curationexperts-mailboxer"
+  s.name = "mailboxer"
   s.version = "0.10.3"
   s.authors = ["Justin Coyne", "Eduardo Casanova Cuesta"]
   s.summary = "Messaging system for rails apps."
